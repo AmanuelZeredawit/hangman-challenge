@@ -1,7 +1,7 @@
 class Hangman:
     import random
     import re
-    #from sys import exit
+    from sys import exit
    
     
     
@@ -25,7 +25,7 @@ class Hangman:
     def play(self):
 
         letter = input("enter an alphabetic letter: ")
-        #print(letter.isalpha())
+        
         if len(letter) == 1 and letter.isalpha():
             letter = letter.lower()
             self.turn_count += 1
@@ -40,20 +40,20 @@ class Hangman:
                     self.error_count += 1
                     self.lives = self.lives - 1
 
-        #return self.well_guessed_letter
+       
 
 
             
-        #else:
+        else:
             print("please enter correct letter")
-            #Hangman.play()
+            return self.lives - 1
         
         return self.lives
 
 
     def game_over(self):
         print("game over")
-        # sys.exit()
+        self.sys.exit()
         
         
 
@@ -62,14 +62,13 @@ class Hangman:
         
     
     def start_game(self):
-        #print("startgame", self.well_guessed_letter,self.word_to_find)
-        if self.well_guessed_letter == self.word_to_find:
-            print(self.well_played())
-            self.game_over()
+        
         print(self.lives)
         while(self.lives > 0):
-            #self.play()
-            self.lives =self.play()
+            self.lives = self.play()
+            if self.well_guessed_letter == self.word_to_find:
+                print(self.well_played())
+                self.game_over()
         if self.lives == 0:
             self.game_over()
 

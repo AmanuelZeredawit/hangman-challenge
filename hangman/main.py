@@ -5,7 +5,6 @@ def main ():
     player1 = Hangman()
     player1.start_game()
     
-    
   
 if __name__ == '__main__':
     main()
